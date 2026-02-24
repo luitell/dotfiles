@@ -49,7 +49,6 @@ alias lt='lsd --tree'
 # Myvim aliases
 # ───────────────────────────────────────────────
 
-alias myvim='NVIM_APPNAME="myvim" nvim'
-
+alias fcd='cd "$(find . -type d | fzf)"'
 
 neofetch
