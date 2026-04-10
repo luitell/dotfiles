@@ -49,6 +49,6 @@ alias lt='lsd --tree'
 # Myvim aliases
 # ───────────────────────────────────────────────
 
-alias fcd='cd "$(find . -type d | fzf)"'
+alias tc='sesh connect $(sesh list | fzf)'
 
 neofetch
