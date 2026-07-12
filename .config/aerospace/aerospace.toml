@@ -1,20 +1,15 @@
+# Place a copy of this config to ~/.aerospace.toml
+# After that, you can edit ~/.aerospace.toml to your liking
+
 # Config version for compatibility and deprecations
 # Fallback value (if you omit the key): config-version = 1
 config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = [
-  'exec-and-forget sketchybar',
-  'exec-and-forget borders active_color=0x90EED8FF inactive_color=0x00494d64 width=4.0',
-]
+after-startup-command = []
 
-# Notify Sketchybar about workspace change
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-] # Start AeroSpace at login
+# Start AeroSpace at login
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -50,63 +45,24 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 [workspace-to-monitor-force-assignment]
-# A callback that runs every time binding mode changes1 = 'main'
-2 = 'main'
-3 = 'main'
-4 = "secondary"
-5 = "secondary"
-6 = "secondary"
+1 = "main"
+2 = "main"
+3 = "main"
+4 = "main"
+5 = "main"
+6 = "main"
+7 = "secondary"
+8 = "secondary"
+9 = "secondary"
+
+
+# A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 on-mode-changed = []
-
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Finder"
-run = "layout floating"
-
-
-# Workspace 1 — Terminal
-[[on-window-detected]]
-if.app-name-regex-substring = "Ghostty"
-run = "move-node-to-workspace 1"
-
-
-# Workspace 2 — Design / Media
-[[on-window-detected]]
-if.app-name-regex-substring = "Figma"
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Logic"
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Final Cut"
-run = "move-node-to-workspace 2"
-
-
-# Workspace 4 — Comms / Project Mgmt
-[[on-window-detected]]
-if.app-name-regex-substring = "Teams"
-run = "move-node-to-workspace 4"
-
-[[on-window-detected]]
-if.app-name-regex-substring = "ClickUp"
-run = "move-node-to-workspace 4"
-
-
-# Workspace 5 — Notes / Knowledge
-[[on-window-detected]]
-if.app-name-regex-substring = "Obsidian"
-run = "move-node-to-workspace 5"
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Notion"
-run = "move-node-to-workspace 5"
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -122,12 +78,12 @@ preset = 'qwerty'
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical = 10
-outer.left = [{ monitor.main = 80 }, 10]
-outer.bottom = 10
-outer.top = 10
-outer.right = 10
+inner.horizontal = 8
+inner.vertical = 8
+outer.left = 8
+outer.bottom = 8
+outer.top = 0
+outer.right = 8
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -158,11 +114,9 @@ outer.right = 10
 # alt-enter = '''exec-and-forget osascript -e '
 # tell application "Terminal"
 #     do script
-#     activate0
+#     activate
 # end tell'
 # '''
-
-alt-shift-t = 'exec-and-forget open -n /Applications/Ghostty.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'

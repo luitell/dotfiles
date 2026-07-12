@@ -45,10 +45,16 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 
-# ───────────────────────────────────────────────
-# Myvim aliases
-# ───────────────────────────────────────────────
-
 alias tc='sesh connect $(sesh list | fzf)'
 
+alias k='kubectl'
+
 neofetch
+
+# pnpm
+export PNPM_HOME="/Users/porshe/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
